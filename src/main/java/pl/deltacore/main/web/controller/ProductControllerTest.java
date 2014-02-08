@@ -1,4 +1,4 @@
-package pl.core.controller;
+package pl.deltacore.main.web.controller;
 
 import org.junit.Assert;
 import org.junit.Test;
