@@ -1,4 +1,4 @@
-package pl.core.model.entity;
+package pl.deltacore.main.core.persistence;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

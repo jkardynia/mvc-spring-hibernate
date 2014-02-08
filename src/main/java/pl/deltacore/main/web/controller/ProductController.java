@@ -1,4 +1,4 @@
-package pl.core.controller;
+package pl.deltacore.main.web.controller;
 
 import java.util.List;
 
@@ -7,19 +7,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import pl.core.model.entity.Product;
-import pl.core.service.ProductService;
+import pl.deltacore.main.core.persistence.Product;
+import pl.deltacore.main.core.service.ProductsService;
 
 @Controller
 public class ProductController {
 
 	@Autowired
-    private ProductService productService;
+    private ProductsService productsService;
 	
     @RequestMapping("/products")
     public @ResponseBody List<Product> greeting() {
         
     	
-    	return productService.getProducts();
+    	return productsService.getProducts();
     } 
 }  

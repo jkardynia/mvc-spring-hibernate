@@ -1,4 +1,4 @@
-package pl.core.model.dao;
+package pl.deltacore.main.core.service;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -7,10 +7,10 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import pl.core.model.entity.Product;
+import pl.deltacore.main.core.persistence.Product;
 
 @Repository
-public class ProductsDaoImpl implements ProductsDao{
+public class ProductsServiceImpl implements ProductsService{
 
 	@Autowired
     private SessionFactory sessionFactory;
