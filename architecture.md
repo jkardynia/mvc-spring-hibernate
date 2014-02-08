@@ -11,6 +11,12 @@ web
 Miejsce na elementy systemu dedykowane dla aplikacji webowej (kontrolery, widoki i model maj¹cy zastosowanie
 jedynie w aplikacji webowej (np. koszyk))
 
+W naszym podejsciu Single Page - bêd¹ tutaj podstawowe strony, które nastêpnie bêd¹ ogrywane za pomoc¹ angulara, który bêdzie korzysta³ z REST API
+
+rest
+=======
+Kontrolery dla REST API
+
 core
 =======
 Logika boznesowa systemu. Tutaj znajduje siê g³ówny model, który powinien byæ odseparowany od innych modeli (Bounded Context).
@@ -18,12 +24,13 @@ Sk³ada siê on z kilku podpakietów:
 
 domain
 =====
-Stanowi serce systemu. Powinien zawieraæ Agregaty, Policy itp.. Mo¿na tutaj tak¿e wydzieliæ serwisy domenowe (DAO itp), jednak¿e wiêkszoœæ systemów raczej nie bêdzie
+Stanowi serce systemu. Powinien zawieraæ Agregaty, Policy itp.. Mo¿na tutaj tak¿e wydzieliæ serwisy domenowe, jednak¿e wiêkszoœæ systemów raczej nie bêdzie
 na tyle du¿a by by³o to konieczne.
 
 persistence
 =====
 Encje anemiczne dla ORM.
+Repozytoria (DAO)
 
 service
 =====
