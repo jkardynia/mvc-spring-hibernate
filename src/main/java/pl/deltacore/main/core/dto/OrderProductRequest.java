@@ -1,13 +1,13 @@
 package pl.deltacore.main.core.dto;
 
 public class OrderProductRequest {
-	private Integer id;
+	private Long id;
 	
 	public OrderProductRequest(String id){
-		this.id = Integer.getInteger(id);
+		this.id = Long.getLong(id);
 	}
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 }

@@ -32,9 +32,7 @@ public class HibernateConfig {
    public LocalSessionFactoryBean sessionFactory() {
       LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
       sessionFactory.setDataSource(restDataSource());
-      sessionFactory.setPackagesToScan(new String[] { "pl.deltacore.main.core.persistence.repository", });
-      //sessionFactory.setAnnotatedClasses(new Class[] {Product.class});
-//      sessionFactory.setAnnotatedPackages(new String[] { "pl.deltacore.main.core.persistence.entity" });
+      sessionFactory.setPackagesToScan(new String[] { "pl.deltacore.main.core.persistence.repository", "pl.deltacore.main.core.persistence.entity" });
       sessionFactory.setHibernateProperties(hibernateProperties());
 
       return sessionFactory;

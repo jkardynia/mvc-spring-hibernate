@@ -6,5 +6,5 @@ import pl.deltacore.main.core.persistence.entity.Product;
 
 public interface ProductsRepository {
 	public List<Product> getProducts(String order);
-	public Product getProduct(Integer id);
+	public Product find(Long id);
 }

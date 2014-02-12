@@ -22,7 +22,6 @@ public class ProductsController {
 	@Autowired
     private ProductsService productsService;
 	
-	//sample url: /products/?order=desc
     @RequestMapping(method = RequestMethod.GET, value="/products")
     @ResponseStatus(HttpStatus.OK)
     public List<Product> list(@RequestParam(value="order", required=false, defaultValue="asc") String order) {
@@ -35,5 +34,12 @@ public class ProductsController {
     public @ResponseBody void order(@PathVariable String id){  	
     	
     	productsService.orderProduct(new OrderProductRequest(id));
+    } 
+    
+    @RequestMapping(method = RequestMethod.GET, value="/product/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public @ResponseBody Product get(@PathVariable String id){  	
+    	
+    	return productsService.getProduct(id);
     } 
 }  

@@ -9,4 +9,6 @@ public interface ProductsService {
 	public List<Product> getProducts(String Order);
 	
 	public void orderProduct(OrderProductRequest req);
+	
+	public Product getProduct(String id);
 }
