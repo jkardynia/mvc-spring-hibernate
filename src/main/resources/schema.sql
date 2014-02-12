@@ -1,4 +1,4 @@
-drop table products if exists
+drop table if exists products;
 
 -- Tables
 create table products (
