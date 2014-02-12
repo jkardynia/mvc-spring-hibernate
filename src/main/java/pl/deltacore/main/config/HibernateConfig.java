@@ -69,6 +69,7 @@ public class HibernateConfig {
             setProperty("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
             setProperty("hibernate.globally_quoted_identifiers", "true");
             setProperty("hibernate.dialect", env.getProperty("hibernate.dialect"));
+            setProperty("hibernate.connection.release_mode", "auto");
          }
       };
    }
