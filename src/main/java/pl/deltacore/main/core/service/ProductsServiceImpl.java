@@ -36,7 +36,7 @@ public class ProductsServiceImpl implements ProductsService{
 	public Product getProduct(String id) {
 		log.log(Level.WARNING, "servicemojid: "+id);
 		
-		return productsRepository.find(Long.getLong(id));
+		return productsRepository.find(Long.parseLong(id));
 	}
 
 }
