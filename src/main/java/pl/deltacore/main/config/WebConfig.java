@@ -86,5 +86,4 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		messageSource.setCacheSeconds(0);
 		return messageSource;
 	}
-
 }

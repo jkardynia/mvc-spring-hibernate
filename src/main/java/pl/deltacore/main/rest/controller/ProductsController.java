@@ -26,7 +26,7 @@ public class ProductsController {
     @RequestMapping(method = RequestMethod.GET, value="/products")
     @ResponseStatus(HttpStatus.OK)
     public List<Product> list(@RequestParam(value="order", required=false, defaultValue="asc") String order) {
-    	//return "moj response: " + order;
+
     	return productsService.getProducts(order);
     } 
     

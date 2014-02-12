@@ -4,8 +4,8 @@ package pl.deltacore.main.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import pl.deltacore.main.core.persistence.repository.ProductsDao;
-import pl.deltacore.main.core.persistence.repository.ProductsDaoImpl;
+import pl.deltacore.main.core.persistence.repository.ProductsRepository;
+import pl.deltacore.main.core.persistence.repository.HibernateProductsRepository;
 import pl.deltacore.main.core.service.ProductsService;
 import pl.deltacore.main.core.service.ProductsServiceImpl;
 
@@ -17,8 +17,4 @@ public class CoreConfig {
     return new ProductsServiceImpl();
   }
 
-  @Bean
-  public ProductsDao createRepo() {
-    return new ProductsDaoImpl();
-  }
 }

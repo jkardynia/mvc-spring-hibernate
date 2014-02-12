@@ -13,7 +13,7 @@ public class WebAppInitializer extends
   //{!begin addToRootContext}
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class<?>[] { CoreConfig.class };
+		return new Class<?>[] { CoreConfig.class, HibernateConfig.class };
 	}
   //{!end addToRootContext}
 
