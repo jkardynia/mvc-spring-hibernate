@@ -1,4 +1,4 @@
-drop table products if exists
+drop table if exists products;
 
 -- Tables
 create table products (
@@ -10,5 +10,5 @@ create table products (
 
 -- Data
 insert into products (name, description) values ('banany', 'kupilem 2 kg bananow');
-insert into products (name, description) values ('swinie', 'Do ubicia na kie³bê');
+insert into products (name, description) values ('swinie', 'Do ubicia na kieÅ‚bÄ™');
 insert into products (name, description) values ('kaloryfer', 'na brzuch');
