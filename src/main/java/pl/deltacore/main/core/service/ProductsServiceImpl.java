@@ -22,21 +22,30 @@ public class ProductsServiceImpl implements ProductsService{
 	@Autowired
     private ProductsRepository productsRepository;
 	
+	/**
+	 * @Query
+	 */
 	public List<Product> getProducts(String order) {
 		return productsRepository.getProducts(order);
 	}
 
-	public void orderProduct(OrderProductRequest req) {
-		OrderAggregate order = new OrderAggregate();
-		
-		order.addProduct(productsRepository.find(req.getId()));
-		order.finalize();
-	}
-
+	/**
+	 * @Query
+	 */
 	public Product getProduct(String id) {
 		log.log(Level.WARNING, "servicemojid: "+id);
 		
-		return productsRepository.find(Long.parseLong(id));
+		return productsRepository.getProduct(Long.parseLong(id));
+	}
+	
+	/**
+	 * @Command
+	 */
+	public void orderProduct(OrderProductRequest req) {
+		OrderAggregate order = new OrderAggregate();
+		
+		order.addProduct(req.getId());
+		order.finalize();
 	}
 
 }

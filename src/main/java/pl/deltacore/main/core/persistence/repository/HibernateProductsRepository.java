@@ -25,14 +25,30 @@ public class HibernateProductsRepository implements ProductsRepository{
                 .list();
 	}
 	
-	public Product find(Long id) {
+	public Product getProduct(Long id) {
 		Session session = sessionFactory.getCurrentSession();
 		session.setDefaultReadOnly(true);
 		
-		Product product = (Product) sessionFactory.getCurrentSession().get(Product.class, id);
+		Product product = load(id);
 		
 		session.setDefaultReadOnly(false);
 		
 		return product;
+	}
+	
+	public Product load(Long id) {
+		Product product = (Product) sessionFactory.getCurrentSession().get(Product.class, id);
+		
+		return product;
+	}
+
+	public void save(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		
 	}
 }
