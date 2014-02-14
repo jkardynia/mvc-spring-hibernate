@@ -3,6 +3,7 @@ package pl.deltacore.main.config;
 import javax.servlet.Filter;
 
 import org.springframework.core.annotation.Order;
+import org.springframework.orm.hibernate4.support.OpenSessionInViewFilter;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -32,7 +33,8 @@ public class WebAppInitializer extends
 		
 		CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
 		characterEncodingFilter.setEncoding("UTF-8");
-		return new Filter[] { characterEncodingFilter};
+		
+		return new Filter[] {characterEncodingFilter};
 	}
 
 }

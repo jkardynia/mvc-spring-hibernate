@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -14,19 +15,24 @@ import pl.deltacore.main.core.service.ProductsServiceImpl;
 @Repository
 public class HibernateProductsRepository implements ProductsRepository{
 
-	static Logger log = Logger.getLogger(ProductsServiceImpl.class.getName());
-	
 	@Autowired
     private SessionFactory sessionFactory;
 	
 	@SuppressWarnings("unchecked")
 	public List<Product> getProducts(String order) {
 		return sessionFactory.getCurrentSession().createQuery("from Product")
+				.setReadOnly(true)
                 .list();
 	}
 	
 	public Product find(Long id) {
-		log.log(Level.WARNING, "DAOmojid: "+id);
-		return (Product) sessionFactory.getCurrentSession().load(Product.class, id);
+		Session session = sessionFactory.getCurrentSession();
+		session.setDefaultReadOnly(true);
+		
+		Product product = (Product) sessionFactory.getCurrentSession().get(Product.class, id);
+		
+		session.setDefaultReadOnly(false);
+		
+		return product;
 	}
 }
